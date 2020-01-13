@@ -1,0 +1,49 @@
+/* Header
+------------------------*/
+.header {
+    background-color: var(--color-yellow);
+    display: flex;
+    align-items: center;
+    padding: 1rem 3.6rem;
+
+    & h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Site title */
+
+.site-title {
+
+    & a {
+        color: var(--color-offblack);
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase
+    }
+}
+
+/* Menu */
+
+.menu {
+    margin-left: auto;
+}
+
+.menu a {
+    color: var(--color-offblack);
+    margin-right: 2rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* Media queries
+------------------------*/
+@media(min-width: 768px) {
+
+}

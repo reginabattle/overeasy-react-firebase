@@ -1,0 +1,36 @@
+/* Global 
+------------------------*/
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--color-grey-light);
+	color: var(--color-offblack);
+	font-size: 1.8rem;
+	font-weight: 400;
+	font-family: var(--font-body);
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+	font-weight: 500;
+}
+
+a {
+	color: var(--color-blue-dark);
+	font-weight: 500;
+	transition: all .25s ease-out;
+}
