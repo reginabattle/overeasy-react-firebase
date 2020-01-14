@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getFirebase } from '../firebase'
 import Form from '../components/form/form'
 import SectionHeader from '../components/section/header'
 
@@ -9,17 +10,58 @@ const Create = () => {
     const [coverImageAlt, setCoverImageAlt] = useState('')
     const [content, setContent] = useState('')
 
-    const createPost = () => {
-        console.log({ title, slug, coverImage, coverImageAlt, content })
+    const generateDate = () => {
+        const now = new Date()
+        const year = now.getFullYear()
+        const options = { month: "long", day: "numeric", year: "numeric" }
+        
+        let month = now.getMonth() + 1
+        if (month < 10) {
+            month = `0${month}`
+        }
+        
+        let day = now.getDate()
+        if(day < 10) {
+            day `0${day}`
+        }
+
+        return {
+            "formatted": `${month}/${day}/${year}`,
+            "pretty": now.toLocaleDateString("en-US", options)
+        }
+    }
+
+    const createPost = e => {
+        e.preventDefault()
+        const date = generateDate()
+
+        const newPost = {
+            title,
+            date: date.pretty,
+            slug,
+            coverImage,
+            coverImageAlt,
+            content
+        }
+
+        console.log('new post', newPost)
+
+        getFirebase()
+            .database()
+            .ref()
+            .child(`posts/${slug}`)
+            .set(newPost)
+            .then(post => {
+                console.log('post added')
+            })
     }
 
     return (
         <>
             <section className="page-content">
-                
                 <SectionHeader title="Create Post" />
 
-                <Form type='create-post'>
+                <Form type="create-post" onSubmit={createPost}>
                     <div className="form-field">
                         <label htmlFor="title">Title</label>
                         <input id="title" type="text" value={title} 
@@ -50,7 +92,7 @@ const Create = () => {
                             onChange={({ target: { value } }) => {setContent(value)}} />
                     </div>
 
-                    <button type="submit" onClick={createPost}>Create</button>
+                    <button type="submit">Create</button>
                 </Form>
             </section>
         </>
