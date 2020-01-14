@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { getFirebase } from '../firebase'
 import Card from '../components/card/card'
-import SectionHeader from '../components/section/header'
+import SectionHeader from '../components/section/section-header'
 
 const Home = () => {
 	const [loading, setLoading] = useState(true);
@@ -35,7 +35,7 @@ const Home = () => {
 
 	return (
 		<>
-			<SectionHeader title="Blog" desc="Check out some of the latest recipes." />
+			<SectionHeader title="Food & Recipe Blog" desc="Check out the latest recipes." />
 			<section className="cards">
 				{blogPosts.map((blogPost, index) => (
 					<Card key={index} data={blogPost} />

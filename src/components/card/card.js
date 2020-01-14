@@ -9,11 +9,11 @@ const Card = props => {
             <article key={props.data.slug} className="card">
                 <img src={props.data.coverImage} alt={props.data.coverImageAlt} />
                 <div className="card-content">
-                    <h2>{props.data.title} &mdash;{" "}
-                        <span style={{ color: "#5e5e5e" }}>{props.data.datePretty}</span>
+                    <h2>{props.data.title}
+                        <span style={{ color: "#5e5e5e" }}>{props.data.date}</span>
                     </h2>
                     <p dangerouslySetInnerHTML={{
-                            __html: `${props.data.content.substring(0, 100)}...`
+                            __html: `${props.data.content.substring(0, 60)}...`
                         }}
                     ></p>
                     <Link className="button read-more" to={`/${props.data.slug}`}>Read more</Link>

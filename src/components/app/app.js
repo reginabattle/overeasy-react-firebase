@@ -11,13 +11,15 @@ function App() {
   return (
     <Router>
     	<Header />
-      	<main>
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route path="/create" component={Create} />
-				<Route path="/404" component={NotFound} />
-				<Route path="/:slug" component={Post} />
-			</Switch>
+      	<main className="content">
+			<div className="container">
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/create" component={Create} />
+					<Route path="/404" component={NotFound} />
+					<Route path="/:slug" component={Post} />
+				</Switch>
+			</div>
       	</main>
     </Router>
   )

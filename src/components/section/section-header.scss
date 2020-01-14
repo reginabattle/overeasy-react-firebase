@@ -1,16 +1,13 @@
 /* Section Header
 ------------------------*/
-main {
-    background: var(--color-white);
-    padding: 3.2rem 6rem;
-  }
-  
 .section-header {
     margin-bottom: 6rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
   
     & h1 {
+        font-size: 4.4rem;
+        font-weight: 600;
         margin-bottom: 0.8rem;
     }
 }

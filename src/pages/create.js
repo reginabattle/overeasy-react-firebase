@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { getFirebase } from '../firebase'
 import Form from '../components/form/form'
-import SectionHeader from '../components/section/header'
+import SectionHeader from '../components/section/section-header'
 
 const Create = () => {
     const [title, setTitle] = useState('')

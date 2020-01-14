@@ -1,15 +1,18 @@
 /* Layout 
 ------------------------*/
-main {
-  background: var(--color-white);
-  padding: 3.2rem 6rem;
+.container {
+  padding: 1.6rem 2.6rem;
 }
 
 /* Media queries
 ------------------------*/
 @media(min-width: 768px) {
-  main {
+  .container {
     max-width: 1000px;
     margin: 0 auto;
+  }
+
+  .content {
+    padding-top: 8rem;
   }
 }

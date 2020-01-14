@@ -17,7 +17,6 @@ html {
 }
 
 body {
-	background-color: var(--color-grey-light);
 	color: var(--color-offblack);
 	font-size: 1.8rem;
 	font-weight: 400;
@@ -38,7 +37,8 @@ p {
 }
 
 a {
-	color: var(--color-blue-dark);
-	font-weight: 500;
-	transition: all .25s ease-out;
+	color: var(--color-blue);
+	font-weight: 600;
+	text-decoration: none;
+	transition: all .3s ease-out;
 }
