@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { getFirebase } from '../firebase'
 import Card from '../components/card/card'
+import SectionHeader from '../components/section/header'
 
 const Home = () => {
 	const [loading, setLoading] = useState(true);
@@ -21,9 +22,9 @@ const Home = () => {
 				for (let slug in snapshotVal) {
 					posts.push(snapshotVal[slug])
 				}
-
-				const newestFirst = posts.reverse();
-				setBlogPosts(newestFirst);
+				
+				posts.reverse()
+				setBlogPosts(posts);
 				setLoading(false); 
 			})
 		}
@@ -32,19 +33,9 @@ const Home = () => {
 		return <h1>Loading...</h1>;
 	}
 
-	const PageHeader = props => {
-		return (
-			<header className="page-header">
-				<h1>{props.title}</h1>
-				<p>{props.desc}</p>
-			</header>
-		)
-	}
-
 	return (
 		<>
-			<PageHeader title="Blog" desc="Check out some of the latest recipes." />
-	
+			<SectionHeader title="Blog" desc="Check out some of the latest recipes." />
 			<section className="cards">
 				{blogPosts.map((blogPost, index) => (
 					<Card key={index} data={blogPost} />

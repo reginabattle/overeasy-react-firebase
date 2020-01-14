@@ -4,7 +4,8 @@ import './app.scss'
 import Header from '../header/header'
 import Home from '../../pages/home'
 import Post from '../../pages/post'
-import NotFound from '../../pages/404'
+import Create from '../../pages/create'
+import NotFound from '../../pages/not-found'
 
 function App() {
   return (
@@ -13,12 +14,13 @@ function App() {
       	<main>
 			<Switch>
 				<Route exact path="/" component={Home} />
+				<Route path="/create" component={Create} />
 				<Route path="/404" component={NotFound} />
 				<Route path="/:slug" component={Post} />
 			</Switch>
       	</main>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
