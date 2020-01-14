@@ -51,14 +51,15 @@ const Create = () => {
             .ref()
             .child(`posts/${slug}`)
             .set(newPost)
-            .then(post => {
-                console.log('post added')
-            })
+            .then(post => console.log('post added'))
+
+        document.querySelector('Form').reset()
     }
 
     return (
         <>
             <section className="page-content">
+                
                 <SectionHeader title="Create Post" />
 
                 <Form type="create-post" onSubmit={createPost}>
