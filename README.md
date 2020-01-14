@@ -5,10 +5,10 @@ Blog website built with [React](https://reactjs.org) and [Firebase](https://fire
 
 ### Install
 ```sh
-npm run start
+npm start
 ```
 
 ### Build
 ```sh
-gatsby build
+npm build
 ```
