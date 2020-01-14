@@ -3,7 +3,7 @@ import './form.scss'
 
 const Form = props => {
     return (
-        <form className={props.type}>
+        <form className={props.type} onSubmit={props.onSubmit}>
             {props.children}
         </form>
     )

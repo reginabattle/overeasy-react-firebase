@@ -13,7 +13,7 @@ const Card = props => {
                         <span style={{ color: "#5e5e5e" }}>{props.data.datePretty}</span>
                     </h2>
                     <p dangerouslySetInnerHTML={{
-                            __html: `${props.data.content.substring(0, 200)}`
+                            __html: `${props.data.content.substring(0, 100)}...`
                         }}
                     ></p>
                     <Link className="button read-more" to={`/${props.data.slug}`}>Read more</Link>
