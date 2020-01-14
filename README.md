@@ -10,5 +10,5 @@ npm start
 
 ### Build
 ```sh
-npm build
+npm run build
 ```
