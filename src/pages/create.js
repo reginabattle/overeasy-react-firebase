@@ -31,6 +31,14 @@ const Create = () => {
         }
     }
 
+    const clearForm = () => {
+        document.querySelector('#title').value = ''
+        document.querySelector('#slug').value = ''
+        document.querySelector('#cover').value = ''
+        document.querySelector('#alt').value = ''
+        document.querySelector('#content').value = ''
+    }
+
     const createPost = e => {
         e.preventDefault()
         const date = generateDate()
@@ -43,9 +51,7 @@ const Create = () => {
             coverImageAlt,
             content
         }
-
-        console.log('new post', newPost)
-
+        
         getFirebase()
             .database()
             .ref()
@@ -53,7 +59,7 @@ const Create = () => {
             .set(newPost)
             .then(post => console.log('post added'))
 
-        document.querySelector('Form').reset()
+        clearForm()
     }
 
     return (
