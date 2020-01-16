@@ -7,10 +7,13 @@ const Card = props => {
         <>
             {/* {console.log(props.data)} */}
             <article key={props.data.slug} className="card">
-                <img src={props.data.coverImage} alt={props.data.coverImageAlt} />
+                <figure className="card-image">
+                    <div style={{ backgroundImage: `url(${props.data.coverImage})` }} aria-label={props.data.coverImageAlt}></div>
+                </figure>
+
                 <div className="card-content">
                     <h2>{props.data.title}
-                        <span style={{ color: "#5e5e5e" }}>{props.data.date}</span>
+                        <span>{props.data.date}</span>
                     </h2>
                     <p dangerouslySetInnerHTML={{
                             __html: `${props.data.content.substring(0, 60)}...`
