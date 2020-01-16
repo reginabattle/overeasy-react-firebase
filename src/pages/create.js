@@ -60,7 +60,7 @@ const Create = () => {
         <>
             <section className="page-content">
                 
-                <SectionHeader title="Create Post" />
+                <SectionHeader title="Create Post" desc="Add a new post to the blog." />
 
                 <Form type="create-post" onSubmit={createPost}>
                     <div className="form-field">
